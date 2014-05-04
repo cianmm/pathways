@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_local',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,16 +52,28 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		'mysql_local' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'pathways',
+			'username'  => 'root',
+			'password'  => 'root',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+		
+        'mysql_prod' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'pathways',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
+
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
