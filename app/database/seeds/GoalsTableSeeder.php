@@ -63,7 +63,7 @@ class GoalsTableSeeder extends Seeder {
         Goal::create([
             'user_id' => '2',
             
-            'goal_title' => 'Dying',
+            'goal_title' => 'Staying Alive',
             
             'goal_description' => 'Don\'t die',
             
@@ -79,9 +79,9 @@ class GoalsTableSeeder extends Seeder {
             
             'goal_description' => 'I don\'t even care this is ridiculous',
             
-            'goal_value' => '1',
+            'goal_value' => '0',
             
-            'goal_complete' => '0'
+            'goal_complete' => '3'
         ]);
 
 	}
