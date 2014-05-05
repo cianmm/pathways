@@ -20,7 +20,9 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-brand">Pathways</div>
+            <div class="navbar-header">
+            <a class="navbar-brand" href="/goals">Pathways</a>
+            </div>
         </div>
     </div>
 
@@ -37,6 +39,7 @@
         </div>
         
     </div>
-
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </body>
 </html>
