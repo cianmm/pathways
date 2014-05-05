@@ -100,5 +100,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
     	$this->attributes['second_name'] = ucwords($value);
 	}
+	
+	/**
+	 * Let's get the goals for a particular user
+	 *
+	 */
+	 
+	 public function goals()
+	 {
+    	 return $this->hasMany('Goal'); 
+	 }
 
 }
