@@ -48,43 +48,6 @@ class UsersTableSeeder extends Seeder {
             
             'current_position' => 'Back End Genius'
         ]);
-        
-        Goal::create([
-            'user_id' => '2',
-            
-            'goal_title' => 'Client work',
-            
-            'goal_description' => 'Meet 30 clients',
-            
-            'goal_value' => '2',
-            
-            'goal_complete' => '30'
-        ]);
-        
-        Goal::create([
-            'user_id' => '2',
-            
-            'goal_title' => 'Dying',
-            
-            'goal_description' => 'Don\'t die',
-            
-            'goal_value' => '1',
-            
-            'goal_complete' => '1'
-        ]);
-
-        Goal::create([
-            'user_id' => '3',
-            
-            'goal_title' => 'Refactor database',
-            
-            'goal_description' => 'I don\t even care this is ridiculous',
-            
-            'goal_value' => '1',
-            
-            'goal_complete' => '0'
-        ]);
-
 
 	}
 
