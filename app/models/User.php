@@ -80,9 +80,25 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 	
+	/**
+	 * What follows are several mutators that ensure we always store
+	 * our name and password information with the correct
+	 * formatting ie Hashed password, uppercase first
+     * and last name letters.
+     */
 	public function setPasswordAttribute($value)
 	{
     	$this->attributes['password'] = Hash::make($value);
+	}
+	
+	public function setFirstNameAttribute($value)
+	{
+    	$this->attributes['first_name'] = ucwords($value);
+	}
+	
+	public function setSecondNameAttribute($value)
+	{
+    	$this->attributes['second_name'] = ucwords($value);
 	}
 
 }

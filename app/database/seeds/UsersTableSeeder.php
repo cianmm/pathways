@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder {
             
             'first_name' => 'Cian',
             
-            'second_name' => 'Mac Mahon',
+            'second_name' => 'Mac mahon',
             
             'current_position' => 'Support Engineer'
         ]);
@@ -30,9 +30,9 @@ class UsersTableSeeder extends Seeder {
             
             'password' => 'IanRocks',
             
-            'first_name' => 'Ian',
+            'first_name' => 'ian',
             
-            'second_name' => 'Goode',
+            'second_name' => 'goode',
             
             'current_position' => 'Front-end Developer'
         ]);

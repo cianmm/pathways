@@ -49,7 +49,9 @@ class GoalsController extends \BaseController {
 		$goal = Goal::findOrFail($id);
 		
 		// let's find the percentage of the goal that has been completed
-		$goalCurrent = ($goal->goal_value / $goal->goal_complete) * 100;
+		// (we may use number_format on the resultant once we get
+		// to use this in a view. No need to worry now.
+		$goalCurrent = Goal::getCurrent($goal->goal_value, $goal->goal_complete);
 		
 		return View::make('goals.show', compact('goal', 'goalCurrent'));
 	}
