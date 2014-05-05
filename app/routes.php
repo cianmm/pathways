@@ -20,13 +20,13 @@ Route::get('{username}', function($username)
      *Setting first because although we know that this
      *is unique, you can never be too careful!
      */
+     
       $user = User::whereUsername($username)->first(); 
 
      //get all of the goals associated with that user
       return $user->goals;  
      
     // return them
-
 });
 
 Route::get('{username}/{goal}', function($username, $goal)

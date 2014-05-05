@@ -51,7 +51,21 @@ class GoalsController extends \BaseController {
 		// let's find the percentage of the goal that has been completed
 		// (we may use number_format on the resultant once we get
 		// to use this in a view. No need to worry now.
-		$goal['current'] = Goal::getCurrent($goal->goal_value, $goal->goal_complete);
+		$goalCurrent = Goal::getCurrent($goal->goal_value, $goal->goal_complete);
+		$goal['current'] = $goalCurrent;
+		
+		if ($goalCurrent < 25)
+		{
+			$goal['currentClass'] = "progress-bar-warning";
+		}
+		else if ($goalCurrent < 80)
+		{
+			$goal['currentClass'] = "progress-bar-info";
+		}
+		else
+		{
+			$goal['currentClass'] = "progress-bar-success";
+		}
 		
 		return View::make('goals.show', compact('goal'));
 	}
