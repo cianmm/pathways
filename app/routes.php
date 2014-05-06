@@ -11,8 +11,14 @@
 |
 */
 
+// If we want to log somebody in or out, send them here
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+
 Route::resource('goals', 'GoalsController');
- 
+Route::resource('dash', 'GoalsController');
+Route::resource('sessions', 'SessionsController');
+
 Route::get('{username}', function($username)
 {
     /*

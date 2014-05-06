@@ -10,9 +10,12 @@ class GoalsController extends \BaseController {
 	public function index()
 	{
 	    
+
 	    $goals = Goal::all();
 	
 		return View::make('goals.index', compact('goals'));
+
+
 	}
 
 
