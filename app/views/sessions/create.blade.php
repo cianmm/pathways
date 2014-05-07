@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+{{--
 <div class='col-xs-6 col-md-2'>	    
 
 				{{ Form::open(array('route' => 'sessions.store', 'role'=>'form', 'class'=>'navbar-form navbar-right'))}}
@@ -15,5 +16,5 @@
 				  </div>
 				{{ Form::close()}}
 </div>	
-
+--}}
 @stop

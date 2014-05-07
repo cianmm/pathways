@@ -15,7 +15,7 @@
 // If we want to log somebody in or out, send them here
 
 Route::get('login', array('as' => 'login', 'uses' => 'SessionsController@create'));
-Route::get('logout', 'SessionsController@destroy');
+Route::get('logout', array('as' => 'logout', 'uses' => 'SessionsController@destroy'));
 
 Route::resource('sessions', 'SessionsController');
 
