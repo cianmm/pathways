@@ -56,26 +56,34 @@ class GoalsController extends \BaseController {
 	{
 		$goal = Goal::findOrFail($id);
 		
-		// let's find the percentage of the goal that has been completed
-		// (we may use number_format on the resultant once we get
-		// to use this in a view. No need to worry now.
-		$goalCurrent = Goal::getCurrent($goal->goal_value, $goal->goal_complete);
-		$goal['current'] = $goalCurrent;
-		
-		if ($goalCurrent < 25)
+		// let's ensure that this user is allowed view this goal, and if not redirect them to their goals. 
+		if ($goal->user_id == Auth::user()->id)
 		{
-			$goal['currentClass'] = "progress-bar-warning";
-		}
-		else if ($goalCurrent < 80)
-		{
-			$goal['currentClass'] = "progress-bar-info";
+    		// let's find the percentage of the goal that has been completed
+    		// (we may use number_format on the resultant once we get
+    		// to use this in a view. No need to worry now.
+    		$goalCurrent = Goal::getCurrent($goal->goal_value, $goal->goal_complete);
+    		$goal['current'] = $goalCurrent;
+    		
+    		if ($goalCurrent < 25)
+    		{
+    			$goal['currentClass'] = "progress-bar-warning";
+    		}
+    		else if ($goalCurrent < 80)
+    		{
+    			$goal['currentClass'] = "progress-bar-info";
+    		}
+    		else
+    		{
+    			$goal['currentClass'] = "progress-bar-success";
+    		}
+    		
+    		return View::make('goals.show', compact('goal'));
 		}
 		else
 		{
-			$goal['currentClass'] = "progress-bar-success";
+    		return Redirect::to('goals');
 		}
-		
-		return View::make('goals.show', compact('goal'));
 	}
 
 

@@ -11,6 +11,7 @@
 |
 */
 
+
 // If we want to log somebody in or out, send them here
 
 Route::get('login', array('as' => 'login', 'uses' => 'SessionsController@create'));
@@ -19,37 +20,22 @@ Route::get('logout', 'SessionsController@destroy');
 Route::resource('sessions', 'SessionsController');
 
 Route::resource('goals', 'GoalsController');
-/*
-Route::resource('dash', 'GoalsController');
-Route::resource('sessions', 'SessionsController');
-*/
 
-Route::get('{username}', function($username)
-{
-    /*
-     *find user from the user table (based on their username)
-     *Setting first because although we know that this
-     *is unique, you can never be too careful!
-     */
-     
-      $user = User::whereUsername($username)->first(); 
+//=================================================================
+//! Route::get('{username}', function($username)
+//  {
+//      /*
+//       *find user from the user table (based on their username)
+//       *Setting first because although we know that this
+//       *is unique, you can never be too careful!
+//       */
+//       
+//        $user = User::whereUsername($username)->first(); 
+//  
+//       //get all of the goals associated with that user
+//        return $user->goals;  
+//       
+//      // return them
+//  });
+//=================================================================
 
-     //get all of the goals associated with that user
-      return $user->goals;  
-     
-    // return them
-});
-
-Route::get('{username}/{goal}', function($username, $goal)
-{
-    
-    // let's display the specific goal the visitor wants
-    
-    // first, find the user
-    $user = User::whereUsername($username)->first();
-    
-    // next find the task (or if they don't own the task, fail)
-    $task = $user->goals()->findOrFail($goal);
-    
-    return $task;
-});
