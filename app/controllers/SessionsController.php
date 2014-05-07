@@ -1,7 +1,7 @@
 <?php
 
 class SessionsController extends BaseController {
-	
+		
 	public function create()
 	{
 		return View::make('sessions.create');
@@ -11,9 +11,16 @@ class SessionsController extends BaseController {
 	{
 		if (Auth::attempt(Input::only('username', 'password')))
 		{
-			return Auth::user();
+			return Redirect::route('goals.index');
 		}
 			return "Login failed";
+	}
+	
+	public function destroy()
+	{
+		Auth::logout();
+		
+		return Redirect::route('login');
 	}
 	
 }

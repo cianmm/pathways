@@ -9,10 +9,15 @@ class GoalsController extends \BaseController {
 	 */
 	public function index()
 	{
+	    if(Auth::guest())
+	    {
+		    return Redirect::to('login');
+	    }
 	    
-
-	    $goals = Goal::all();
-	
+      	$user = Auth::user(); 
+	 		
+	  	$goals =  $user->goals;
+	  	
 		return View::make('goals.index', compact('goals'));
 
 
