@@ -18,14 +18,33 @@
     <![endif]-->
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-            <a class="navbar-brand" href="/goals">Pathways</a>
-            </div>
-        </div>
-    </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+			        <span class="sr-only">Toggle login</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+				</button>
 
+	            <a class="navbar-brand" href="/goals">Pathways</a>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<form class="navbar-form navbar-right" role="form">
+				  <div class="form-group">	        
+					  {{ Form::input('text', 'username', null, array('class'=>'form-control', 'placeholder'=>'Username'))}}
+				  </div>
+				  <div class="form-group">	        
+					  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
+				  </div>
+				  	
+				  <button type="submit" class="btn btn-default">Login</button>
+				</form>
+			</div>
+        </div>
+    </nav>
     <div class="jumbotron">
         <div class="container">
             <h1>Pathways</h1>
@@ -34,12 +53,14 @@
     </div>
     <div class="container">
     
-        <div class="content col-xs-12 col-md-8 col-md-offset-2">
+        <div class="content">
             @yield('content')
         </div>
         
     </div>
-<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+<!-- Latest compiled and minified jQuery and JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

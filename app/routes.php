@@ -15,9 +15,13 @@
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 
+Route::resource('sessions', 'SessionsController');
+
 Route::resource('goals', 'GoalsController');
+/*
 Route::resource('dash', 'GoalsController');
 Route::resource('sessions', 'SessionsController');
+*/
 
 Route::get('{username}', function($username)
 {
