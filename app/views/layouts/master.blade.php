@@ -9,6 +9,8 @@
 	
 	<!-- include bootstrap from a cdn -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- include my own CSS -->
+	{{HTML::style('/css/css.css')}}
 	<!-- better rendering and zooming on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
