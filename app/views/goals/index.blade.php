@@ -27,29 +27,19 @@
     <div class="add-goal-form col-md-4">
         <h1>Add goal</h1>        
         
-        {{Form::open()}}
-        
+        {{Form::open(array('route' => 'goals.store', 'method' => 'post'))}}
             <div class="form-group">
-             
                 {{Form::input('text', 'title', null, array('class'=>'form-control', 'placeholder' => 'Goal title'))}}
-                
             </div>    
             <div class="form-group">
-                
                 {{Form::input('text', 'goal-description', null, array('class'=>'form-control', 'placeholder' => 'How would you describe the goal?'))}}
-            
             </div>
-            <div class="form-group">
-                
+            <div class="form-group">    
                 {{Form::input('text', 'goal-complete', null, array('class'=>'form-control', 'placeholder' => 'What\'s the number to reach?'))}}
-            
             </div>
-            <div class="form-group">
-                
+            <div class="form-group">    
                 {{Form::submit('Create goal', array('class'=>'btn btn-default'))}}
-            
             </div>
-
         {{ Form::close()}}    
     </div> <!-- add goal form -->
 </div> <!-- row 1 -->

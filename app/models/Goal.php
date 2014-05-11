@@ -2,6 +2,7 @@
 
 class Goal extends Eloquent {
     
+    protected $fillable = array('user_id', 'goal_title', 'goal_description', 'goal_value', 'goal_complete');
 
     public static function getCurrent($value, $complete)
     {

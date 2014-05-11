@@ -11,7 +11,7 @@
 	            <a class="navbar-brand" href="/goals">Pathways</a>
 
 			</div>
-				            				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
 			@if (Auth::guest())
 					{{ Form::open(array('route' => 'sessions.store', 'role'=>'form', 'class'=>'navbar-form navbar-right'))}}

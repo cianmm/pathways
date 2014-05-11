@@ -31,7 +31,7 @@ class GoalsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+			
 	}
 
 
@@ -41,8 +41,23 @@ class GoalsController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//
+	{   
+	    // create the goal
+	    $goal = new Goal;
+		
+		$input = Input::all();
+
+		//grab the user id to assign this goal to
+        $goal->user_id = Auth::user()->id;
+        
+        // and the rest of the info
+        $goal->goal_title = $input['title'];
+        $goal->goal_description = $input['goal-description'];
+        $goal->goal_complete = $input['goal-complete'];
+        
+        $goal->save();
+        
+        return Redirect::route('goals.index');
 	}
 
 
