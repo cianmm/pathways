@@ -134,8 +134,18 @@ class GoalsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
-	}
-
+	    // ensure this user is allowed delete this goal
+	    $goal = Goal::findOrFail($id);
+        if ($goal->user_id == Auth::user()->id)
+        {
+		    $goal = Goal::find($id);
+		    $goal->delete();
+		    return Redirect::route('goals.index');
+		}
+		else
+		{
+    		return "You aren't allowed delete this goal";
+		}
+    }
 
 }

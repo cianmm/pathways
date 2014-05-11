@@ -15,8 +15,9 @@
             
         </div>
         
-        </div>
+    </div>
 
-    <p>
-
+    {{ Form::open(array('route' => array('goals.destroy', $goal->id), 'method' => 'delete'))}}
+    {{ Form::submit('Delete', array('class'=>'btn btn-danger'))}}
+    {{ Form::close()}}
 @stop
