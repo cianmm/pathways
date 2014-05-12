@@ -2,3 +2,16 @@
 	padding: .75em;
 	margin-bottom: 2em;
 }
+
+/* 
+ * Goals page
+ */
+
+.goals-list button.close {
+	float: none;
+	border: none;
+}
+
+.goals-list span.label.label-warning {
+float: right;
+}
