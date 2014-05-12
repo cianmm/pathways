@@ -11,6 +11,9 @@
                 {{ link_to("goals/$goal->id", $goal->goal_title) }}
             </td>
             <td>
+                <span class="pie">{{$goal->goal_value}}/{{$goal->goal_complete}}</span>
+            </td>
+            <td>
                 @if ($goal->goal_value <= 0)
                     <span class="label label-danger">Not Started</span>
                     
@@ -20,7 +23,7 @@
                 @elseif ($goal->goal_value >= $goal->goal_complete)
                     <span class="label label-success">Complete</span>
                     
-                @endif
+                @endif            
             </td>
         </tr>
         @endforeach 

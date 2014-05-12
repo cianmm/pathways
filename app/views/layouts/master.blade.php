@@ -11,6 +11,13 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<!-- include my own CSS -->
 	{{HTML::style('/css/css.css')}}
+	
+	<!-- Latest compiled and minified jQuery and JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    {{HTML::script('js/functions.js')}}
+    {{HTML::script('js/peity.min.js')}}
+
 	<!-- better rendering and zooming on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,9 +43,5 @@
         </div>
         
     </div>
-<!-- Latest compiled and minified jQuery and JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-{{HTML::script('js/functions.js')}}
 </body>
 </html>
