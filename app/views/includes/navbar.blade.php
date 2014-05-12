@@ -27,7 +27,7 @@
 				{{ Form::close()}}
 		@else
 			<div>
-				{{ HTML::linkRoute('logout', 'Logout', null, array('type' => 'button', 'class' => 'btn btn-danger navbar-btn navbar-right'))}}
+				{{ HTML::linkRoute('logout', 'Logout', null, array('class' => 'btn btn-danger navbar-btn navbar-right'))}}
 			</div>
 		@endif
 						</div>

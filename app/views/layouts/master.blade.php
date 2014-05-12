@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-	<title></title>
+	<title>Pathways: @yield('title', 'Meet your goals.')</title>
 	<meta name="description" content="" />
   	<meta name="keywords" content="" />
 	<meta name="author" content="Cian Mac Mahon" />

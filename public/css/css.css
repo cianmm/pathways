@@ -12,6 +12,6 @@
 	border: none;
 }
 
-.goals-list span.label.label-warning {
-float: right;
+.goals-list span.label{
+	float: right;
 }
