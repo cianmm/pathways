@@ -4,10 +4,16 @@
 
 @section('content')
 <div class="row">
-<div class="goals-list col-md-4">
+<div class="goals-list col-md-6">
    <h1>All goals</h1>
    <table class="table table-striped">
     <tbody>
+        <tr>
+            <th>Title</th>
+            <th>Progress</th>
+            <th>Status</th>
+            <th>Remaining</th>
+        </tr>
         @foreach ($goals as $goal)
         <tr>
             <td>
@@ -16,7 +22,7 @@
             <td>
                 <span class="pie"
 
-                @if ($goal->goal_value == $goal->goal_complete)
+                @if ($goal->goal_value >= $goal->goal_complete)
                     data-fill='["#5cb85c", "#eeeeee"]'
                 @else
                     data-fill='["#f0ad4e", "#eeeeee"]'
@@ -35,12 +41,25 @@
                     
                 @endif            
             </td>
+            <td>
+                <?  $remaining = $goal->goal_complete - $goal->goal_value; 
+                    
+                    $remainingStatus = 'incomplete';
+                    
+                    if ($remaining <= 0)
+                    {
+                        $remainingStatus = 'complete';
+                    }
+                    
+                ?>
+                <span class="{{ $remainingStatus }}">{{ $remaining }} </span>
+            </td>
         </tr>
         @endforeach 
     </tbody>
     </table>
 </div> <!-- .goals-list -->
-<div class="add-goal-form col-md-4 col-md-offset-4">
+<div class="add-goal-form col-md-4 col-md-offset-2">
     <h1>Add goal</h1>
     @include('includes.addgoalform')        
 </div> <!-- add goal form -->

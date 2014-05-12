@@ -13,19 +13,19 @@
 		</div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
-		@if (Auth::guest())
-				{{ Form::open(array('route' => 'sessions.store', 'role'=>'form', 'class'=>'navbar-form navbar-right'))}}
-				  <div class="form-group">	        
-					  {{ Form::input('text', 'username', null, array('class'=>'form-control', 'placeholder'=>'Username'))}}
-				  </div>
-				  <div class="form-group">	        
-					  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
-				  </div>
-				  <div class="form-group">	        
-				  	  {{ Form::submit('Log in', array('class'=>'btn btn-success')) }}
-				  </div>
-				{{ Form::close()}}
-		@else
+			@if (Auth::guest())
+					{{ Form::open(array('route' => 'sessions.store', 'role'=>'form', 'class'=>'navbar-form navbar-right'))}}
+					  <div class="form-group">	        
+						  {{ Form::input('text', 'username', null, array('class'=>'form-control', 'placeholder'=>'Username'))}}
+					  </div>
+					  <div class="form-group">	        
+						  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
+					  </div>
+					  <div class="form-group">	        
+					  	  {{ Form::submit('Log in', array('class'=>'btn btn-success')) }}
+					  </div>
+					{{ Form::close()}}
+			@else
 			<div>
 				{{ HTML::linkRoute('logout', 'Logout', null, array('class' => 'btn btn-danger navbar-btn navbar-right'))}}
 			</div>

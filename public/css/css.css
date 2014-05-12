@@ -12,6 +12,10 @@
 	border: none;
 }
 
-.goals-list span.label{
-	float: right;
+.goals-list span.complete {
+    color: #5cb85c;
+}
+
+.goals-list span.incomplete {
+    color: #f0ad4e;
 }
