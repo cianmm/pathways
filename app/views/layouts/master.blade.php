@@ -42,6 +42,14 @@
             @yield('content')
         </div>
         
-    </div>
+    </div>  
+    <div id="footer">
+        <div class="container">
+        
+            <a class="text-muted" href="http://www.twitter.com/cianmm" title="Cian on Twitter">@Cianmm</a>
+        
+        </div>
+
+    </div><!-- footer -->
 </body>
 </html>

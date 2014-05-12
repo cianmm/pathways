@@ -16,10 +16,10 @@
         </tr>
         @foreach ($goals as $goal)
         <tr>
-            <td>
+            <td class="table-goal-title">
                 {{ link_to("goals/$goal->id", $goal->goal_title) }}
             </td>
-            <td>
+            <td class="table-goal-pie">
                 <span class="pie"
 
                 @if ($goal->goal_value >= $goal->goal_complete)
@@ -29,7 +29,7 @@
                 @endif
                 >{{$goal->goal_value}}/{{$goal->goal_complete}}</span>
             </td>
-            <td>
+            <td class="table-goal-label">
                 @if ($goal->goal_value <= 0)
                     <span class="label label-danger">Not Started</span>
                     
@@ -41,7 +41,7 @@
                     
                 @endif            
             </td>
-            <td>
+            <td class="table-goal-remaining">
                 <?  $remaining = $goal->goal_complete - $goal->goal_value; 
                     
                     $remainingStatus = 'incomplete';
