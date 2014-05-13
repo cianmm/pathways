@@ -14,46 +14,40 @@ class UsersTableSeeder extends Seeder {
         
         // now let's throw some users in there
         User::create([
-            
-            'username' => 'cianmm',
-        
+                    
             'email' => 'cianmm@gmail.com',
             
             'password' => '1234',
             
             'first_name' => 'Cian',
             
-            'second_name' => 'Mac mahon',
+            'last_name' => 'Mac mahon',
             
             'current_position' => 'Support Engineer'
         ]);
         
         User::create([
-                    
-            'username' => 'iandgoode',
-        
+                            
             'email' => 'ian@iangoode.com',
             
             'password' => 'IanRocks',
             
             'first_name' => 'ian',
             
-            'second_name' => 'goode',
+            'last_name' => 'goode',
             
             'current_position' => 'Front-end Developer'
         ]);
 
         User::create([
                             
-            'username' => 'briand',
-
             'email' => 'dodomcfrodo@gmail.com',
             
             'password' => 'Brian Is Great',
             
             'first_name' => 'Brian',
             
-            'second_name' => 'Doherty',
+            'last_name' => 'Doherty',
             
             'current_position' => 'Back End Genius'
         ]);

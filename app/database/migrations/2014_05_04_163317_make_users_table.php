@@ -22,7 +22,7 @@ class MakeUsersTable extends Migration {
 
 			$table->string('first_name', 20);
 			
-			$table->string('second_name', 50);
+			$table->string('last_name', 50);
 			
 			$table->string('current_position', 50)->nullable();
 			

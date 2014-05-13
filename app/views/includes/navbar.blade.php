@@ -26,8 +26,11 @@
 					  </div>
 					{{ Form::close()}}
 			@else
-			<div>
-				{{ HTML::linkRoute('logout', 'Logout', null, array('class' => 'btn btn-danger navbar-btn navbar-right'))}}
+			<div class="navbar-right">
+			    <div class="navbar-text">
+                    Hi {{Auth::user()->first_name}}
+			    </div>
+				{{ HTML::linkRoute('logout', 'Logout', null, array('class' => 'btn btn-danger navbar-btn'))}}
 			</div>
 		@endif
 						</div>
