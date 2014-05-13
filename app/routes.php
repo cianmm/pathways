@@ -16,6 +16,9 @@
 
 Route::get('login', array('as' => 'login', 'uses' => 'SessionsController@create'));
 Route::get('logout', array('as' => 'logout', 'uses' => 'SessionsController@destroy'));
+/* Route::get('register', array('as' => 'register', 'uses' => 'UsersController@create')); */
+
+Route::resource('users', 'UsersController');
 
 Route::resource('sessions', 'SessionsController');
 

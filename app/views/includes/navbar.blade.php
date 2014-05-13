@@ -16,7 +16,7 @@
 			@if (Auth::guest())
 					{{ Form::open(array('route' => 'sessions.store', 'role'=>'form', 'class'=>'navbar-form navbar-right'))}}
 					  <div class="form-group">	        
-						  {{ Form::input('text', 'username', null, array('class'=>'form-control', 'placeholder'=>'Username'))}}
+						  {{ Form::email('email', null, array('class'=>'form-control', 'placeholder'=>'Email'))}}
 					  </div>
 					  <div class="form-group">	        
 						  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}

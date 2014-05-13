@@ -12,7 +12,7 @@
 	<div class='col-md-4'>	    
 		{{ Form::open(array('route' => 'sessions.store', 'role'=>'form',))}}
 		  <div class="form-group">	        
-			{{ Form::input('text', 'username', null, array('class'=>'form-control', 'placeholder'=>'Username'))}}
+              {{ Form::email('email', null, array('class'=>'form-control', 'placeholder'=>'Email'))}}
 		  </div>
 		  <div class="form-group">	        
 			{{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}

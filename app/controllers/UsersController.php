@@ -20,7 +20,10 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		if (Auth::guest())
+		{
+    		return View::make('users.create');
+		}
 	}
 
 
@@ -31,7 +34,7 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		return Input::all();
 	}
 
 
