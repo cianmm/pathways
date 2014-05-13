@@ -26,6 +26,8 @@ class CreateGoalsTable extends Migration {
 			
 			$table->integer('goal_complete');
 			
+			$table->string('deletable', 1);
+			
 			$table->timestamps();
 		});
 	}

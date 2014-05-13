@@ -15,6 +15,8 @@ class MakeUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
+
+            $table->string("username", 50)->unique();
 			
 			$table->string('email', 50)->unique();
 			
@@ -24,7 +26,9 @@ class MakeUsersTable extends Migration {
 			
 			$table->string('second_name', 50);
 			
-			$table->string('current_position', 50);
+			$table->string('current_position', 50)->nullable();
+			
+            $table->string("remember_token", 100);
 			
 			$table->timestamps();
 		});
