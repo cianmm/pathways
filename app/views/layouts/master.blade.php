@@ -21,7 +21,7 @@
 	<!-- better rendering and zooming on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <!--This is Remy Sharp's script for adding some HTML5 tag compatibility to older IE browsers-->
+ {#<!--This is Remy Sharp's script for adding some HTML5 tag compatibility to older IE browsers--> #}
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -44,11 +44,6 @@
         
     </div>  
     <div id="footer">
-        <div class="container">
-        
-            <a class="text-muted" href="http://www.twitter.com/cianmm" title="Cian on Twitter">@Cianmm</a>
-        
-        </div>
 
     </div><!-- footer -->
 </body>

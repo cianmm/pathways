@@ -13,7 +13,8 @@ $(document).ready(function() {
      * Validation for our Add Goal forms
      */
      $("#goal_title").on("keyup", validateGoalTitle);
-     $("#goal_complete").on("keyup", validateGoalComplete);
+     $("#goal_complete").on("keyup", validateNumber);
+     $("#goal_value").on("keyup", validateNumber);
 
 });
 
@@ -89,7 +90,7 @@ function validateGoalTitle()
     
 }
 
-function validateGoalComplete() {
+function validateNumber() {
     var input = $(this);
     var input_div = $(this).parent();
     

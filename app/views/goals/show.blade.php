@@ -1,8 +1,9 @@
-@extends('layouts.master')
+@extends("layouts.master")
 
-@section('title', $goal->goal_title)
+@section("title", $goal->goal_title)
 
-@section('content')
+@section("content")
+    <!-- goal information -->
     <div class="col-md-8">
         <h1>{{$goal->goal_title}}</h1>
     
@@ -19,8 +20,34 @@
         
         </div>
 
-    {{ Form::open(array('route' => array('goals.destroy', $goal->id), 'method' => 'delete'))}}
-    {{ Form::submit('Delete', array('class'=>'btn btn-danger'))}}
+    {{ Form::open(array("route" => array("goals.destroy", $goal->id), "method" => "delete"))}}
+    {{ Form::submit("Delete", array("class"=>"btn btn-danger"))}}
     {{ Form::close()}}
+    </div>
+    
+    <!-- edit goal -->
+    <div class="col-md-4 edit-goal-form">
+        <h1>Edit Goal</h1>
+        {{ Form::model($goal, array("route" => array("goals.update", $goal->id), "method" => "put", "role" => "form")) }}
+        <div class="form-group">
+            {{ Form::label("title", "Goal Title")}}
+            {{ Form::text("goal_title", null, array("class"=>"form-control", "id"=>"goal_title"))}}
+        </div>
+        <div class="form-group">
+            {{ Form::label("goal_description", "Goal Description")}}
+            {{ Form::text("goal_description", null, array("class"=>"form-control", "id"=>"goal_description"))}}
+        </div>
+        <div class="form-group">
+            {{ Form::label("goal_value", "How much of this goal have you completed?")}}
+            {{ Form::text("goal_value", null, array("class"=>"form-control", "id"=>"goal_value"))}}
+        </div>
+        <div class="form-group">
+            {{ Form::label("goal_complete", "Aim")}}
+            {{ Form::text("goal_complete", null, array("class"=>"form-control", "id"=>"goal_complete"))}}
+        </div>
+        <div class="form-group">
+            {{ Form::submit("Edit goal", array("class"=>"btn btn-default"))}}
+        </div>
+        {{ Form::close()}}
     </div>
 @stop

@@ -6,8 +6,9 @@ class Goal extends Eloquent {
     
     public static $rules = [
         
-        'title' => 'required|between:6,40',
-        'goal-complete' => 'required|numeric'
+        'goal_title' => 'required|between:5,40',
+        'goal_complete' => 'required|numeric',
+        'goal_value' => 'numeric'
     ];
     
     protected $fillable = array('user_id', 'goal_title', 'goal_description', 'goal_value', 'goal_complete', 'deletable');

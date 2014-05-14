@@ -47,6 +47,7 @@ class GoalsController extends \BaseController {
 	
         if ($validation->fails())
 	    {
+	        dd($validation->messages());
     	    return Redirect::back()->withInput()->withErrors($validation->messages());
 	    }
 	
@@ -59,9 +60,9 @@ class GoalsController extends \BaseController {
         $goal->user_id = Auth::user()->id;
         
         // and the rest of the info
-        $goal->goal_title = $input['title'];
-        $goal->goal_description = $input['goal-description'];
-        $goal->goal_complete = $input['goal-complete'];
+        $goal->goal_title = $input['goal_title'];
+        $goal->goal_description = $input['goal_description'];
+        $goal->goal_complete = $input['goal_complete'];
         
         $goal->save();
         
@@ -130,7 +131,38 @@ class GoalsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+	
+		    //first, validate
+        $validation = Validator::make(Input::all(), Goal::$rules);
+	
+        if ($validation->fails())
+	    {
+	    
+	//        dd($validation->messages());
+    	    return Redirect::back()->withInput()->withErrors($validation->messages());
+	    }
+	    
+		$input = Input::all();
+
+	    // ensure this user is allowed delete this goal
+	    $goal = Goal::findOrFail($id);
+        if ($goal->user_id == Auth::user()->id)
+        {
+        
+            $goal->goal_title = $input['goal_title'];
+            $goal->goal_description = $input['goal_description'];
+            $goal->goal_value = $input['goal_value'];
+            $goal->goal_complete = $input['goal_complete'];
+            
+            $goal->save();
+            
+		    return Redirect::back();
+		}
+		else
+		{
+    		return "You aren't allowed delete this goal";
+		}
+
 	}
 
 
@@ -142,7 +174,7 @@ class GoalsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-	    // ensure this user is allowed delete this goal
+			// ensure the user is allowed update this goal
 	    $goal = Goal::findOrFail($id);
         if ($goal->user_id == Auth::user()->id)
         {
@@ -152,8 +184,9 @@ class GoalsController extends \BaseController {
 		}
 		else
 		{
-    		return "You aren't allowed delete this goal";
+    		return "You aren't allowed update this goal";
 		}
+
     }
 
 }
