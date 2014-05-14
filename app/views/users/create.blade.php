@@ -11,6 +11,8 @@
             
             {{ Form::text('first_name') }}
             
+            {{ $errors->first('first_name') }}
+            
         </div>
         
         <div>
@@ -18,6 +20,8 @@
             {{ Form::label('last_name', 'Last Name:') }}
             
             {{ Form::text('last_name') }}
+                       
+            {{ $errors->first('last_name') }}
             
         </div>
 
@@ -26,14 +30,19 @@
         
             {{ Form::label('email', 'Email: ') }}
             
-            {{ Form::email('email')}}
+            {{ Form::email('email', null, array('class'=>'email-input'))}}
+            
+            {{ $errors->first('email') }}            
             
         </div>
         
         <div>
             {{ Form::label('password', 'Password: ') }}
             
-            {{ Form::password('password')}}
+            {{ Form::password('password') }}
+            
+            {{ $errors->first('password') }}
+
         </div>
         
 		<div>{{ Form::submit() }}</div>

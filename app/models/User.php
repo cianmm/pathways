@@ -5,6 +5,17 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+    // rules for validating users
+    
+    public static $rules = [
+    
+        'email' => 'required |unique:users|email',
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'password' => 'required|between:6,40'
+    
+    ];
+
 	// Set what we are ok with mass assigning
 	
 	protected $fillable = ['username', 'email', 'first_name', 'last_name', 'password', 'current_position'];

@@ -61,7 +61,7 @@
 </div> <!-- .goals-list -->
 <div class="add-goal-form col-md-4 col-md-offset-2">
     <h1>Add goal</h1>
-    @include('includes.addgoalform')        
+    {{ $createform }}
 </div> <!-- add goal form -->
 </div>
 @stop

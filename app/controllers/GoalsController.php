@@ -18,7 +18,7 @@ class GoalsController extends \BaseController {
 	 		
 	  	$goals =  $user->goals;
 	  	
-		return View::make('goals.index', compact('goals'));
+		return View::make('goals.index', compact('goals'))->nest('createform', 'goals.child.addgoalform');
 
 
 	}
@@ -42,6 +42,14 @@ class GoalsController extends \BaseController {
 	 */
 	public function store()
 	{   
+	
+	    $validation = Validator::make(Input::all(), Goal::$rules);
+	
+        if ($validation->fails())
+	    {
+    	    return Redirect::back()->withInput()->withErrors($validation->messages());
+	    }
+	
 	    // create the goal
 	    $goal = new Goal;
 		

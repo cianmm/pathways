@@ -13,7 +13,7 @@ class SessionsController extends BaseController {
 		{
 			return Redirect::route('goals.index');
 		}
-			return "Login failed";
+			return Redirect::back()->withInput();
 	}
 	
 	public function destroy()
