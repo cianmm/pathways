@@ -31,7 +31,7 @@ class GoalsController extends \BaseController {
 	 */
 	public function create()
 	{
-			
+	    return View::make('goals.create')->nest('createform', 'goals.child.addgoalform');		
 	}
 
 

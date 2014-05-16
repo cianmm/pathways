@@ -50,6 +50,10 @@
                     {
                         $remainingStatus = 'complete';
                     }
+                    elseif($remaining == $goal->goal_complete)
+                    {
+                        $remainingStatus = 'unstarted';
+                    }
                     
                 ?>
                 <span class="{{ $remainingStatus }}">{{ $remaining }} </span>
@@ -59,7 +63,7 @@
     </tbody>
     </table>
 </div> <!-- .goals-list -->
-<div class="add-goal-form col-md-4 col-md-offset-2">
+<div class="add-goal-form col-md-4 col-md-offset-2 hidden-xs">
     <h1>Add goal</h1>
     {{ $createform }}
 </div> <!-- add goal form -->

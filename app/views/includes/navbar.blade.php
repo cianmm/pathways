@@ -27,9 +27,10 @@
 					{{ Form::close()}}
 			@else
 			<div class="navbar-right">
-			    <div class="navbar-text">
+			    <div class="navbar-text hidden-xs">
                     Hi {{Auth::user()->first_name}}
 			    </div>
+			    {{ HTML::linkRoute('goals.create', 'Create goal', null, array('class' => 'btn btn-success navbar-btn hidden-md hidden-sm hidden-lg'))}}
 				{{ HTML::linkRoute('logout', 'Logout', null, array('class' => 'btn btn-danger navbar-btn'))}}
 			</div>
 		@endif

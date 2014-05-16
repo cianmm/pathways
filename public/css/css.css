@@ -3,6 +3,17 @@
 	margin-bottom: 2em;
 }
 
+/*
+ * Jumbotron styling
+ *
+ */
+ 
+a.jumbotron-title {
+    color: #333;
+    text-decoration: none;
+}
+
+
 /* 
  * Goals page
  */
@@ -18,6 +29,10 @@
 
 .goals-list span.incomplete {
     color: #f0ad4e;
+}
+
+.goals-list span.unstarted {
+    color: #d9534f;
 }
 
 

@@ -53,6 +53,10 @@ class UsersController extends \BaseController {
 				
 		$user->save();
 		
+		// Let's log in the user who just registered
+/* 		$registeredUser = User::where('email', $user->email)->first(); */
+		Auth::login($user);
+		
 		return Redirect::route('goals.index');
 	}
 
@@ -105,6 +109,5 @@ class UsersController extends \BaseController {
 	{
 		//
 	}
-
-
+	
 }

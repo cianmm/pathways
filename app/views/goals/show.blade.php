@@ -4,6 +4,7 @@
 
 @section("content")
     <!-- goal information -->
+<div class="row">
     <div class="col-md-8">
         <h1>{{$goal->goal_title}}</h1>
     
@@ -30,7 +31,7 @@
         <h1>Edit Goal</h1>
         {{ Form::model($goal, array("route" => array("goals.update", $goal->id), "method" => "put", "role" => "form")) }}
         <div class="form-group">
-            {{ Form::label("title", "Goal Title")}}
+            {{ Form::label("goal_title", "Goal Title")}}
             {{ Form::text("goal_title", null, array("class"=>"form-control", "id"=>"goal_title"))}}
         </div>
         <div class="form-group">
@@ -50,4 +51,5 @@
         </div>
         {{ Form::close()}}
     </div>
+</div>
 @stop

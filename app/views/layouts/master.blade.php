@@ -21,7 +21,7 @@
 	<!-- better rendering and zooming on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
- {#<!--This is Remy Sharp's script for adding some HTML5 tag compatibility to older IE browsers--> #}
+ <!--This is Remy Sharps script for adding some HTML5 tag compatibility to older IE browsers-->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -32,7 +32,7 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1>Pathways</h1>
+            <h1>{{ link_to_route('goals.index', 'Pathways', null, array('class' => 'jumbotron-title'))}}</h1>
             <p>Let's meet your goals. They're friendly.</p>
         </div>
     </div>

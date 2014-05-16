@@ -4,7 +4,15 @@ class SessionsController extends BaseController {
 		
 	public function create()
 	{
-		return View::make('sessions.create');
+	
+	    if (Auth::guest())
+        {
+		    return View::make('sessions.create')->nest('registerform', 'sessions.child.registerform');
+        }
+        else
+        {
+            return Redirect::route('goals.index');
+        }
 	}
 	
 	public function store()

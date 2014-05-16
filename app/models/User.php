@@ -120,11 +120,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * Let's get the goals for a particular user
 	 *
 	 */
-	 public function goals()
-	 {
-    	 return $this->hasMany('Goal'); 
-	 }
-	 
+    public function goals()
+    {
+        return $this->hasMany('Goal'); 
+    }
+    	
+    // return the role which the user is in
+    public function role()
+    {
+        return $this->belongsTo('Role');
+    }
+
+ 
 	 // check to see if the user owns a goal (if they own the goal, we should return true
 /*
 	 public static function hasGoalWithID($id){

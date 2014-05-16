@@ -9,6 +9,8 @@ $(document).ready(function() {
      */
     $(".email-input").on("keyup", validateEmail);
     
+    
+    
     /*
      * Validation for our Add Goal forms
      */
@@ -58,7 +60,7 @@ function validateEmail()
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!regex.test(email.val()))
     {
-        email.parent().addClass("has-error");  
+        email.parent().addClass("has-error");
     }
     else
     {

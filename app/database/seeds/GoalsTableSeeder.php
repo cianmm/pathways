@@ -9,10 +9,10 @@ class GoalsTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-	    // first let's remove everything out of the users table
+	    // first let's remove everything out of the goals table
 	    Goal::truncate();
         
-        // now let's throw some users in there
+        // now let's throw some goals in there
         Goal::create([
             'user_id' => '1',
             
@@ -47,6 +47,29 @@ class GoalsTableSeeder extends Seeder {
             'goal_value' => '1',
             
             'goal_complete' => '4'
+        ]);
+        Goal::create([
+            'user_id' => '1',
+            
+            'goal_title' => 'Sales Calls',
+            
+            'goal_description' => 'Listen to 4 hours of Sales calls',
+            
+            'goal_value' => '4',
+            
+            'goal_complete' => '4'
+        ]);
+        
+        Goal::create([
+            'user_id' => '1',
+            
+            'goal_title' => 'Self Training',
+            
+            'goal_description' => 'Complete all self-training documentation available on the training portal',
+            
+            'goal_value' => '0',
+            
+            'goal_complete' => '25'
         ]);
         Goal::create([
             'user_id' => '2',

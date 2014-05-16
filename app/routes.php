@@ -14,6 +14,7 @@
 
 // If we want to log somebody in or out, send them here
 
+Route::get('/', array('as'=>'index', 'uses' => 'SessionsController@create'));
 Route::get('login', array('as' => 'login', 'uses' => 'SessionsController@create'));
 Route::get('logout', array('as' => 'logout', 'uses' => 'SessionsController@destroy'));
 /* Route::get('register', array('as' => 'register', 'uses' => 'UsersController@create')); */
@@ -23,22 +24,3 @@ Route::resource('users', 'UsersController');
 Route::resource('sessions', 'SessionsController');
 
 Route::resource('goals', 'GoalsController');
-
-//=================================================================
-//! Route::get('{username}', function($username)
-//  {
-//      /*
-//       *find user from the user table (based on their username)
-//       *Setting first because although we know that this
-//       *is unique, you can never be too careful!
-//       */
-//       
-//        $user = User::whereUsername($username)->first(); 
-//  
-//       //get all of the goals associated with that user
-//        return $user->goals;  
-//       
-//      // return them
-//  });
-//=================================================================
-

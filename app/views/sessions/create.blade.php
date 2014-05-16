@@ -9,18 +9,27 @@
 	</div>
 </div>
 <div class="row">
-	<div class='col-md-4 col-md-offset-4'>	    
+    <div class="col-md-4">
+        <h1>Register</h1>
+        {{ $registerform }}
+
+    </div> <!-- register -->
+
+	<div class='col-md-4 col-md-offset-4 login'>	
+	    <h1>Login</h1>    
 		{{ Form::open(array('route' => 'sessions.store', 'role'=>'form',))}}
-		  <div class="form-group">	        
-              {{ Form::email('email', null, array('class'=>'form-control email-input', 'placeholder'=>'Email'))}}
+		  <div class="form-group">
+		      {{ Form::label('login-email', 'Email')}}
+              {{ Form::email('login-email', null, array('class'=>'form-control email-input', 'placeholder'=>'Email'))}}
 		  </div>
-		  <div class="form-group">	        
-			{{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
+		  <div class="form-group">	  
+		    {{ Form::label('login-password', 'Password')}}
+			{{ Form::password('login-password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
 		  </div>
 		  <div class="form-group">
 		  	{{ Form::submit('Log in', array('class'=>'btn btn-success')) }}
 		  </div>
 		{{ Form::close()}}
-	</div>	
+	</div>	<!-- login -->
 </div>
 @stop
